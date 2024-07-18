@@ -14,10 +14,7 @@ spring:
   h2:
     console:
       enabled: true
-    sql:
-      init:
-        data-locations:
-          - classpath:db/data.sql
+
   jpa:
     hibernate:
       ddl-auto: create
@@ -26,7 +23,6 @@ spring:
       hibernate:
         format_sql: true
         default_batch_fetch_size: 10
-    defer-datasource-initialization: true
     open-in-view: false
 
 logging:

@@ -1,11 +1,10 @@
 package kr.co.polycube.backendtest.user;
 
-import jakarta.persistence.EntityManager;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Repository;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
 
-@RequiredArgsConstructor
-@Repository
-public class UserRepository {
-    private final EntityManager em;
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<User, Long> {
+    Optional<User> findByName(@Param("name") String name);
 }

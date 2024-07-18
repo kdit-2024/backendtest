@@ -1,12 +1,10 @@
 package kr.co.polycube.backendtest.core.error;
 
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
+@RequiredArgsConstructor
 @Getter
 public class ErrorDTO {
-    private String reason;
-
-    public ErrorDTO(String reason) {
-        this.reason = reason;
-    }
+    private final String reason;
 }
