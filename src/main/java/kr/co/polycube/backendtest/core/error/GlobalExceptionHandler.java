@@ -27,6 +27,7 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(Exception.class)
     public ResponseEntity<?> unknown(Exception e){
         log.error(e.getMessage());
+        e.printStackTrace();
         return new ResponseEntity<>(new ErrorDTO("오류 : 관리자에게 문의하세요"), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }
